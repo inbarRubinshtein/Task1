@@ -54,14 +54,3 @@ def calculate(x):
         cal = exponent(x)*XtimesY(7.0, x)*XtimesY(x, -1.0)*sqrt(x, x)
         return cal
     return 0.0
-''''
-try:
-    number = float(input("Enter a number:"))
-    result = calculate(float(number))
-    print(result)
-    
-except:
-    result = 0.0
-    print(result)
-    
-    ''''''
