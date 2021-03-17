@@ -42,7 +42,7 @@ def  XtimesY(x,y):
     return 0.0
 
 def sqrt (x,y):
-    if x=0:
+    if x==0.0:
         return 1.0
     elif y<0:
         return 0.0
