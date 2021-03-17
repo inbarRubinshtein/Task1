@@ -25,7 +25,7 @@ def abss(x,y):
     return diff*-1.0
 
     
-def ln(x):
+def Ln(x):
     y_n = x-1.0
     y_n_1 = y_n+2*((x-exponent(y_n))/(x+exponent(y_n))) 
     while (abss(y_n,y_n_1)>0.001):
@@ -35,7 +35,7 @@ def ln(x):
 
 def  XtimesY(x,y):
     if x>0.0:
-        num = float('%0.6f' % exponent(y*ln(x)))
+        num = float('%0.6f' % exponent(y*Ln(x)))
         return num
     return 0.0
 
@@ -48,7 +48,7 @@ def calculate(x):
     return cal
 
 try:
-    number = input("Enter a number:")
+    number = float(input("Enter a number:"))
     result = calculate(float(number))
     print(result)
     
