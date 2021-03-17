@@ -26,12 +26,14 @@ def abss(x,y):
 
     
 def Ln(x):
-    y_n = x-1.0
-    y_n_1 = y_n+2*((x-exponent(y_n))/(x+exponent(y_n))) 
-    while (abss(y_n,y_n_1)>0.001):
-        y_n = y_n_1
+    if x>0.0:
+        y_n = x-1.0
         y_n_1 = y_n+2*((x-exponent(y_n))/(x+exponent(y_n))) 
-    return y_n_1   
+        while (abss(y_n,y_n_1)>0.001):
+            y_n = y_n_1
+            y_n_1 = y_n+2*((x-exponent(y_n))/(x+exponent(y_n))) 
+        return y_n_1   
+    return 0.0
 
 def  XtimesY(x,y):
     if x>0.0:
@@ -40,13 +42,19 @@ def  XtimesY(x,y):
     return 0.0
 
 def sqrt (x,y):
+    if x=0:
+        return 1.0
+    elif y<0:
+        return 0.0
     num = float('%0.6f' % XtimesY(y,1/x))
     return num
 
 def calculate(x):
-    cal = exponent(x)*XtimesY(7.0, x)*XtimesY(x, -1.0)*sqrt(x, x)
-    return cal
-
+    if x>0.0:
+        cal = exponent(x)*XtimesY(7.0, x)*XtimesY(x, -1.0)*sqrt(x, x)
+        return cal
+    return 0.0
+''''
 try:
     number = float(input("Enter a number:"))
     result = calculate(float(number))
@@ -56,4 +64,4 @@ except:
     result = 0.0
     print(result)
     
-    
+    ''''''
